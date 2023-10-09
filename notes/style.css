@@ -177,7 +177,7 @@ body {
 .note-container-header i {
   background-color: #ffd27d;
   padding: 8px;
-  margin: 0 5px 0 0;
+  margin: 0;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -222,4 +222,11 @@ body {
 #note-title-input:focus,
 #note-body-input:focus {
   outline: none;
+}
+
+button {
+  margin: 0 5px 0 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
 }
