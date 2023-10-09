@@ -1,42 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="style.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo & Notes</title>
-  </head>
 
-  <body>
-    <div class="header">
-      <div class="user-profile">
-        <i class="fa-regular fa-user"></i>
-        <p class="user-name">Alastair McNeill</p>
-      </div>
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo & Notes</title>
+</head>
 
-      <ul class="tab-list">
-        <li>
-          <p id="selected-tab">All</p>
-        </li>
-        <li>
-          <p>Projects</p>
-        </li>
-        <li>
-          <p>Meetings</p>
-        </li>
-        <li>
-          <p>Design</p>
-        </li>
-      </ul>
-      <div class="settings-container">
-        <i class="fa-solid fa-gear"></i>
-        <p>Settings</p>
+<body>
+  <div class="header">
+    <div class="user-profile">
+      <i class="fa-regular fa-user"></i>
+      <p class="user-name">Alastair McNeill</p>
+    </div>
+
+    <ul class="tab-list">
+      <li id="selected-tab">
+        <p>All</p>
+      </li>
+      <li>
+        <p>Projects</p>
+      </li>
+      <li>
+        <p>Meetings</p>
+      </li>
+      <li>
+        <p>Design</p>
+      </li>
+    </ul>
+    <div class="settings-container">
+      <i class="fa-solid fa-gear"></i>
+      <p>Settings</p>
+    </div>
+
+
+  </div>
+  <div class="main">
+    <div class="all-notes-container main-child">
+      <div class="all-notes-header">
+        <i class="fa-regular fa-note-sticky"></i>
+        <span>All Notes</span>
+        <ul>
+          <li>
+            <div class="note-tile">
+              <h4 class="note-tile-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </h4>
+              <h5 class="note-tile-body">Lorem ipllit anim id est laborum.</h5>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-  </body>
-  <script src="home.js"></script>
-  <script
-    src="https://kit.fontawesome.com/7c8801c017.js"
-    crossorigin="annoymous"
-  ></script>
+    <div class="note-container main-child">
+      <div class="note-container-header">
+
+        <!-- <input type="text" name="" id="note-title-input" value="Title"> -->
+        <textarea id="note-title-input" rows="1" placeholder="Title"></textarea>
+
+        <div class="actions">
+          <i class="fa-regular fa-floppy-disk"></i>
+          <i class="fa-regular fa-trash-can"></i>
+        </div>
+
+      </div>
+      <textarea id="note-body-input" placeholder="Enter your note here..."></textarea>
+      <!-- <input type="text" id="note-body-input" placeholder=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+      laborum."> -->
+    </div>
+  </div>
+</body>
+<script src="home.js"></script>
+<script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="annoymous"></script>
+
 </html>

@@ -6,6 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  font-weight: 200;
   margin: 0;
   background-color: #e2e6e9;
   justify-content: center;
@@ -14,7 +15,7 @@ body {
 
 .header {
   background-color: #fff;
-  margin: 100px;
+  margin: 100px 50px 0px 50px;
   padding: 10px;
   display: flex;
   border-radius: 20px;
@@ -30,6 +31,17 @@ body {
   align-items: center;
 }
 
+.header .user-profile i {
+  background-color: #ffd27d;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.header .user-profile p {
+  padding-left: 10px;
+}
+
 .header ul {
   flex-wrap: wrap;
   display: flex;
@@ -38,19 +50,176 @@ body {
   margin: 0;
 }
 
-.header .settings-container {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  align-items: center;
+.header li {
+  padding: 0 8px;
+  margin: 0 2px;
 }
 
-.header i {
-  margin: 0;
-  padding: 0;
+#selected-tab {
+  background-color: #8da6ff;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.header .settings-container {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #ffd27d;
+}
+
+.header .settings-container i {
+  padding-right: 8px;
 }
 
 .header p {
   padding: 0;
   margin: 0;
+}
+
+
+.main {
+  display: flex;
+  margin: 20px 50px 0px 50px;
+  padding: 0px;
+}
+
+.main-child {
+  flex: 1;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.all-notes-container {
+  flex: 1;
+  max-width: 300px;
+  min-width: 100px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.all-notes-container span {
+  font-weight: 400;
+}
+
+.all-notes-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-tile h4 {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.note-tile h5 {
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+  font-weight: 200;
+}
+
+.note-tile {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+.note-tile-title {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+.note-tile-body {
+  max-height: calc(1.2em * 7);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  /* Allow long words to break and wrap to the next line */
+  width: 100%;
+}
+
+.note-container {
+  background-color: #fff;
+  min-width: 200px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 10px;
+  flex: 1;
+}
+
+.note-container-header {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.note-container-header i {
+  background-color: #ffd27d;
+  padding: 8px;
+  margin: 0 5px 0 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.note-container-header .actions {
+  display: flex;
+  flex-direction: row;
+}
+
+.note-container-header .fa-trash-can {
+  background-color: red;
+  color: rgba(255, 255, 255, 0.846);
+}
+
+#note-title-input {
+  width: 100%;
+  margin: 0 10px 0 0;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.3em;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  border: none;
+  border-bottom: 0.5px solid #000;
+  resize: none;
+}
+
+#note-body-input {
+  height: 100%;
+  width: 100%;
+  resize: none;
+  border: none;
+  margin: 10px 0 0 0;
+  font-weight: 200;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  scrollbar-width: thin;
+
+}
+
+#note-title-input:focus,
+#note-body-input:focus {
+  outline: none;
 }
