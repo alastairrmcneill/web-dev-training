@@ -1,3 +1,5 @@
+import { wordList } from "./dictionary";
+
 const state = {
   grid: Array(6)
     .fill()
@@ -67,7 +69,7 @@ function getCurrentWord() {
   return word;
 }
 
-function isWordValid(word) {}
+function isWordValid(word) { }
 
 function isLetterKey(key) {
   return key.length === 1 && key.match(/[a-z]/i);
@@ -90,6 +92,8 @@ function startup() {
   drawGrid(game);
 
   registerKeyboardEvents();
+
+  console.log(wordList)
 }
 
 startup();
