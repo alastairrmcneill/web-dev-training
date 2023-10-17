@@ -495,6 +495,7 @@ const state = {
     .map(() => Array(5).fill("")),
   currentRow: 0,
   currentCol: 0,
+  secretWord: wordList[Math.floor(Math.random() * wordList.length)],
 };
 
 function updateGrid() {
@@ -536,7 +537,11 @@ function registerKeyboardEvents() {
         const word = getCurrentWord();
 
         if (isWordValid(word)) {
-          // revealWord(word);
+          revealWord(word);
+          state.currentRow++;
+          state.currentCol = 0;
+        } else {
+          alert("Not a valid word.");
         }
       }
     }
@@ -562,6 +567,48 @@ function isWordValid(word) {
   return wordList.includes(
     word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
   );
+}
+
+function revealWord(guess) {
+  const row = state.currentRow;
+  for (var i = 0; i < 5; i++) {
+    (function (index) {
+      const box = document.getElementById(`box${row}${index}`);
+      const letter = box.textContent;
+
+      setTimeout(() => {
+        console.log(letter.toLowerCase());
+        console.log(state.secretWord.toLowerCase()[index]);
+        console.log(
+          letter.toLowerCase() === state.secretWord.toLowerCase()[index]
+        );
+
+        if (letter.toLowerCase() === state.secretWord.toLowerCase()[index]) {
+          box.classList.add("right");
+        } else if (
+          state.secretWord.toLowerCase().includes(letter.toLowerCase())
+        ) {
+          box.classList.add("wrong");
+        } else {
+          box.classList.add("empty");
+        }
+      }, ((index + 1) * 500) / 2);
+
+      box.classList.add("animated");
+      box.style.animationDelay = `${(index * 500) / 2}ms`;
+    })(i);
+  }
+
+  const isWinner = state.secretWord.toLowerCase() === guess.toLowerCase();
+  const isGameOver = state.currentRow === 5;
+
+  setTimeout(() => {
+    if (isWinner) {
+      alert("Congratulations!");
+    } else if (isGameOver) {
+      alert(`Better luck next time. The word was "${state.secretWord}".`);
+    }
+  }, 3 * 500);
 }
 
 function isLetterKey(key) {
