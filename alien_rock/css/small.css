@@ -131,6 +131,7 @@ main img {
 main .hero {
   margin: 0;
   padding: 0;
+  overflow-x: scroll;
 }
 
 main #tagLineAndButton {
@@ -138,6 +139,7 @@ main #tagLineAndButton {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 main #tagLine {
@@ -178,7 +180,28 @@ main #registerBtn img {
 }
 
 main i {
-  color: green;
+  color: #c21704;
+}
+
+.quickInfoContainer {
+  padding: 0;
+  margin: 0 20px;
+  padding-top: 20px;
+  border-bottom: 5px solid #c21704;
+}
+.quickInfo {
+  /* background-color: aqua;
+  border: 1px solid black; */
+  text-align: center;
+  min-height: 230px;
+}
+
+.quickInfo a {
+  text-decoration: none;
+  color: black;
+}
+
+.mainContent {
 }
 
 /* Footer Rules */
